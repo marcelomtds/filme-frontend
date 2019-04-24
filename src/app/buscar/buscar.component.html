@@ -1,0 +1,7 @@
+<div style="margin-top: 70px;">
+    <div *ngFor="let f of filmes">
+        <div class="img">
+            <a [routerLink]="[ '/filmeDetalhes', f.imdbID ]"><img width="300px" height="400px" [src]="f.Poster" /></a>
+        </div>
+    </div>
+</div>

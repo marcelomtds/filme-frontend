@@ -1,0 +1,18 @@
+<div *ngIf="usuario" class="indicacao">
+  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Indicar para um amigo</legend>
+    <div>
+      <label for="amigo">Selecione o amigo</label><br>
+      <select id="amigo" [(ngModel)]="this.indicacao.destino">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nome }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="mensagem">Mensagem</label>
+      <input placeholder="Deixe uma mensagem..." class="form-control" id="mensagem" type="text" [(ngModel)]="this.indicacao.mensagem">
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="inserir()">Indicar</button>
+    </div>
+    </fieldset>
+</div>

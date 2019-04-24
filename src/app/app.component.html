@@ -1,0 +1,31 @@
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                    <a class="nav-item nav-link active">Olá {{ nomeUsuario }}, seja bem-vindo!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/">Home</a>
+                </li>
+                <li *ngIf="usuario" class="nav-item">
+                    <a class="nav-item nav-link active" [routerLink]="[ '/indicacoes' ]">Minhas Indicações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link active" href="/" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" [(ngModel)]="this.titulo" placeholder="Informe o título do Filme"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="pesquisar()">Buscar</button>
+            </div>
+        </nav>
+        <div class="outlet">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>

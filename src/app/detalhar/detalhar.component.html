@@ -1,0 +1,94 @@
+<div class="img">
+  <img width="400px" height="500px" [src]="filme.Poster" />
+</div>
+<div>
+  <app-indicacao [idFilme]="idFilme"></app-indicacao>
+</div>
+<div>
+  <div>
+    <h1 class="title">Título: </h1>
+    <h2 class="title">{{ filme.Title }}</h2>
+    <br>
+  </div>
+  <div>
+    <h4>Gênero: </h4>
+    <h5>{{filme.Genre}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Diretor: </h4>
+    <h5>{{filme.Director}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Atores: </h4>
+    <h5>{{filme.Actors}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Ano: </h4>
+    <h5>{{filme.Year}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Duração: </h4>
+    <h5>{{filme.Runtime}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Idioma: </h4>
+    <h5>{{filme.Language}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Escritores: </h4>
+    <h5>{{filme.Writer}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>País: </h4>
+    <h5>{{filme.Country}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Produção: </h4>
+    <h5>{{filme.Production}}</h5>
+    <br>
+  </div>
+  <div>
+    <h4>Website: </h4>
+    <h5>
+      <a [href]="filme.Website">{{filme.Website}}</a>
+    </h5>
+    <br>
+  </div>
+  <div>
+    <h4>Sinope: </h4>
+    <h5>{{filme.Plot}}</h5>
+    <br>
+  </div>
+
+  <div>
+    <app-comentario [idFilme]="idFilme" [imdbId]="imdbId"></app-comentario>
+  </div>
+  <h3>Comentários:</h3>
+  <div *ngFor="let c of comentarios">
+
+    <fieldset class="scheduler-border">
+      <legend class="scheduler-border">
+        <h5>{{ c.nomeUsuario }} - {{ c.data }}</h5>
+      </legend>
+      <div>
+        <div class="img">
+          <img width="150px" height="200px" [src]="'http://localhost:8080/usuario/downloadFoto?foto=' + c.fotoUsuario"
+            alt="">
+        </div>
+        <div class="comentario">
+          <h5>Comentário:</h5> {{ c.comentario }}
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="login">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Autenticação</legend>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" [(ngModel)]="usuario.email" class="form-control" id="email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" [(ngModel)]="usuario.senha" class="form-control" id="senha" placeholder="Senha">
+        </div>
+        <button (click)="login()" class="btn btn-primary">Entrar</button>
+    </fieldset>
+    <div>
+        <p>Clique <a [routerLink]="[ '/cadastrarUsuario' ]">aqui </a> para se cadastrar.</p>
+    </div>
+</div>

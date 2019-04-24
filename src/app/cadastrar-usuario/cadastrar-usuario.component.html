@@ -1,0 +1,26 @@
+<div class="cadastrarUsuario">
+  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">Cadastro de Usuário</legend>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="nome" [(ngModel)]="usuario.nome" class="form-control" id="nome" placeholder="Nome">
+      </div>
+      <label for="email">E-mail</label>
+      <input type="email" [(ngModel)]="usuario.email" class="form-control" id="email" placeholder="E-mail">
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha</label>
+      <input type="password" [(ngModel)]="usuario.senha" class="form-control" id="senha" placeholder="Senha">
+    </div>
+    <div class="form-group">
+      <label for="senha2">Repetir Senha</label>
+      <input type="password" [(ngModel)]="senhaComparacao" class="form-control" id="senha2" placeholder="Repetir Senha">
+    </div>
+    <div class="form-group">
+        <label for="foto">Foto</label><br>
+        <input id="file" type="file" name="file" (change)="carregarFoto($event)">
+      </div>
+    <button (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+  </fieldset>
+</div>

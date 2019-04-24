@@ -1,0 +1,16 @@
+<div *ngIf="usuario" class="comentario">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Comentário</legend>
+        <div class="form-group">
+            <label for="comentario">Comentário</label>
+            <input type="text" [(ngModel)]="comentario.comentario" class="form-control" id="comentario" placeholder="Digite seu comentário...">
+        </div>
+        <button (click)="comentar()" class="btn btn-primary">Enviar</button>
+    </fieldset>
+</div>
+<div *ngIf="!usuario">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Informação</legend>
+        <h4>Para comentar faça <a [routerLink]="[ '/login' ]">login</a> ou <a [routerLink]="[ '/cadastrarUsuario' ]">cadastre-se.</a></h4>
+    </fieldset>
+</div>

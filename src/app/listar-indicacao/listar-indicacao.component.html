@@ -1,0 +1,18 @@
+<div *ngFor="let i of indicacoes">
+  <fieldset class="scheduler-border">
+    <legend class="scheduler-border">
+      <h5>{{ i.usuario.nome }} - {{ i.data }}</h5>
+    </legend>
+    <div>
+      <div class="img">
+        <a [routerLink]="[ '/filmeDetalhes', i.filme.idImdb ]"><img width="150px" height="200px" [src]="i.filme.imagem" /></a>
+      </div>
+      <div class="comentario">
+        <strong>Filme: </strong> {{ i.filme.titulo }}
+        <br>
+        <strong>Mensagem: </strong> {{ i.mensagem }}
+      </div>
+    </div>
+  </fieldset>
+
+</div>
